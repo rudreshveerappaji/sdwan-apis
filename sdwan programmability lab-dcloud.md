@@ -195,10 +195,22 @@ Run below commands using the vmanage ip address, port, login credentials from dc
 These commands should be run in command prompt to set the environment variables which stores vmanage details. 
 
 ```
-set vmanage_host=<vmanage-ip>
-set vmanage_port=<vmanage-port>
-set username=<username>
-set password=<password>
+set vmanage_host=192.18.1.10
+set vmanage_port=443
+set username=admin
+set password=admin
+```
+Verify that your variables are correctly set using the following command on cmd. This will show many variables including the 4 we just added, look for these specifically.
+
+```
+C:Users\Administrator\Desktop\sdwan-programmability=lab> set
+
+password=admin
+USERNAME=admin
+vmanage_host=192.18.1.10
+vmanage_port=443
+
+
 ```
 
 ## Influx DB Installation
