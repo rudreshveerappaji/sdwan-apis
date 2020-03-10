@@ -1,6 +1,6 @@
 
 SD-WAN Programmability Lab Guide 
-================================
+=================================
 
 
 Table of Contents
@@ -15,7 +15,7 @@ Table of Contents
    * [Installation Instructions:](#installation-instructions)
       * [Python Installation](#python-installation)
       * [Influx DB Installation](#influx-db-installation)
-      * [Grafana Installation](#grafana-installation)
+      * [Grafana Installation](#grafana-installation) - Optional
    * [Lab Flow/Use cases](#lab-flowuse-cases)
    * [Usecase-1: Device and Monitoring API's](#usecase-1-device-and-monitoring-apis)
       * [Code Components](#code-components)
