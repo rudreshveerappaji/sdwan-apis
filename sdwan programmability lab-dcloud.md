@@ -115,7 +115,7 @@ Table of Contents
 
 **Note:** This lab utilizes the dCloud SD-WAN platform so, if you have RSVP'ed to do the lab you will have a mail with the session details. Choose either option 1 or 2 to access the session.
 
-Option 1:
+### Lab access Option 1
 
 **Step-1**
 
@@ -146,7 +146,13 @@ Provide `C:\Users\Administrator\Desktop` as path and select Extract option.
 
 Now please go to `sdwan-programmability-lab` directory on Desktop and follow below installation instructions. 
 
-Option 2:
+### Lab access Option 2
+
+Use this option if you had any issues using Option 1 above, else skip this section and move to next
+
+<details>
+  <summary>Click to expand!</summary>
+	
 If you have used option 1, ignore this section and jump to next
 
 ![flow](images/Accessing_Lab.png)
@@ -209,6 +215,9 @@ Now please go to `sdwan-programmability-lab` directory on Desktop and follow bel
 Click on **python-3.7.3-amd64.exe** file and please enable **Add Python 3.7 to PATH** option and click on Install Now
 
 ![python_1](images/python_installation_1.png)
+
+</details>
+<br>
 
 **Step-2**
 
@@ -293,7 +302,7 @@ Now let's start with 1st use case and learn how to use Device and Monitoring API
 
 How to retrieve devices list, control connection status, interface status, system status using vManage REST API's.
 
-## [FYI]Code Components
+## [FYI] Code Components
 
 Please note that this is a FYI section which includes code snippets and structure of CLI based python application script **vmanage_apis.py**. 
 
