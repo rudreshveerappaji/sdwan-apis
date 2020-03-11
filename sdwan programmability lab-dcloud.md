@@ -1378,7 +1378,7 @@ Note: Below screenshots are for Grafana version 6.0.2
 
 **Step-1:**
 
-Use web browser and login to Grafana at http://localhost:3000/  (Username/Password:admin/admin) . After login, we will see below home screen.
+Use web browser and login to Grafana at http://localhost:3000/  (Username/Password:admin/admin) . After login, we will see below home screen. After first login, it will prompt to change the password - please use cisco123 as the new password
 
 ![homescreen](images/Grafana_homescreen.png)
 
