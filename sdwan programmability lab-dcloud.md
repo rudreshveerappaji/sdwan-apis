@@ -690,11 +690,11 @@ C:\Users\Administrator\Desktop\sdwan_prog_lab>
 #vedge 
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.1.0.1
 Retrieving the interface Status
-https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.2.0.1
+https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.1.0.1
 
-Interfaces status for Device =  10.2.0.1
+Interfaces status for Device =  10.1.0.1
 ╒══════════════════╤══════════════════════╕
 │ Interface Name   │ Operational status   │
 ╞══════════════════╪══════════════════════╡
@@ -749,7 +749,7 @@ Device Counters for Device =  10.3.0.1
 #vedge
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.1.0.1
 Retrieving the Device Counters
 https://vmanage-ip:port/dataservice/device/counters?deviceId=10.2.0.1
 
