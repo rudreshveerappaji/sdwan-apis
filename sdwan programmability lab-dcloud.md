@@ -206,6 +206,9 @@ Provide `C:\Users\Administrator\Desktop` as path and select Extract option.
 
 Now please go to `sdwan-programmability-lab` directory on Desktop and follow below installation instructions. 
 
+</details>
+<br>
+
 # Installation Instructions:
 
 ## Python Installation
@@ -216,8 +219,6 @@ Click on **python-3.7.3-amd64.exe** file and please enable **Add Python 3.7 to P
 
 ![python_1](images/python_installation_1.png)
 
-</details>
-<br>
 
 **Step-2**
 
