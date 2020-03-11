@@ -297,7 +297,7 @@ Now let's start with 1st use case and learn how to use Device and Monitoring API
 
 How to retrieve devices list, control connection status, interface status, system status using vManage REST API's.
 
-## Code Components
+## [FYI]Code Components
 
 Please note that this is a FYI section which includes code snippets and structure of CLI based python application script **vmanage_apis.py**. 
 
@@ -876,7 +876,7 @@ device_type: 'vedge-cloud'
 
 While building the templates, we can load the content from above `.yaml` file 
 
-### Code Components
+### [FYI]Code Components
 
 Please note that this is a FYI section which includes code snippets and structure of command `create-feature-template` in CLI based python application script **vmanage_apis.py**. 
 
