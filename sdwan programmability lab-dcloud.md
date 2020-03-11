@@ -439,7 +439,7 @@ C:\Users\Administrator> cd C:\Users\Administrator\Desktop\sdwan-programmability-
 **Sample Response**
 
 ```
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py
 Usage: vmanage_apis.py [OPTIONS] COMMAND [ARGS]...
 
   Command line tool for deploying templates to CISCO SDWAN.
@@ -478,7 +478,7 @@ See the below sample response which includes all the information retrieved for o
 **Sample Response**  
   
 ```
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py list-devices
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py list-devices
 Retrieving the device list
 https://vmanage-ip:port/dataservice/device
 
@@ -588,7 +588,7 @@ Options:
 #cedge 
   
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py control-status --system_ip 10.3.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py control-status --system_ip 10.3.0.1
 Retrieving the Control Status
 https://vmanage-ip:port/dataservice/device/control/synced/connections?deviceId=10.3.0.1
 
@@ -609,7 +609,7 @@ Control Connection status for Device =  10.3.0.1
 
 #vedge
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py control-status --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py control-status --system_ip 10.2.0.1
 Retrieving the Control Status
 https://vmanage-ip:port/dataservice/device/control/synced/connections?deviceId=10.2.0.1
 
@@ -644,7 +644,7 @@ In `interface-status` option, we use resource URI `device/interface/synced?devic
 #cedge
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.3.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.3.0.1
 Retrieving the interface Status
 https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.3.0.1
 
@@ -690,7 +690,7 @@ C:\Users\Administrator\Desktop\sdwan_prog_lab>
 #vedge 
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.1.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.1.0.1
 Retrieving the interface Status
 https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.1.0.1
 
@@ -735,7 +735,7 @@ In `device-counters` option, we use resource URI `device/counters?deviceId=<syst
 ```
 #cedge
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.3.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.3.0.1
 Retrieving the Device Counters
 https://vmanage-ip:port/dataservice/device/counters?deviceId=10.3.0.1
 
@@ -749,7 +749,7 @@ Device Counters for Device =  10.3.0.1
 #vedge
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.1.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.1.0.1
 Retrieving the Device Counters
 https://vmanage-ip:port/dataservice/device/counters?deviceId=10.1.0.1
 
@@ -792,7 +792,7 @@ C:\Users\Administrator\Desktop\sdwan_prog_lab>
 
 #vedge
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py system-status --system_ip 10.1.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py system-status --system_ip 10.1.0.1
 Retrieving the System Status
 https://vmanage-ip:port/dataservice/device/system/status?deviceId=10.1.0.1
 
@@ -876,7 +876,7 @@ Now let’s start using the python script to create the template by using below 
 We can use `.yaml` file to store all the required variables for configuring the template. For example, please see below file `banner_config.yaml`
 
 ```
-$ cat banner_config.yaml
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>type banner_config.yaml
 template_name: 'vedge_cloud_banner'
 template_description: 'vedge_cloud_banner'
 login_banner: 'test_yaml_banner_login'
@@ -966,7 +966,7 @@ On windows command prompt, run command <b>py -3.7 vmanage_apis.py create-feature
 **Sample Response**
 
 ```
-$ py -3.7 vmanage_apis.py create-feature-template --input_yaml banner_config.yaml
+C:\Users\Administrator\Desktop\sdwan-programmability-lab> py -3.7 vmanage_apis.py create-feature-template --input_yaml banner_config.yaml
 Creating feature template based on yaml file details
 Loading Network Configuration Details from YAML File
 
