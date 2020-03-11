@@ -113,7 +113,41 @@ Table of Contents
 
 ##	 Accessing the lab
 
-**Note:** This lab utilizes the dCloud SD-WAN platform so, please schedule dcloud lab ahead of time before proceeding with below steps.
+**Note:** This lab utilizes the dCloud SD-WAN platform so, if you have RSVP'ed to do the lab you will have a mail with the session details. Choose either option 1 or 2 to access the session.
+
+Option 1:
+
+**Step-1**
+
+Open the dCloud session shared with you in your email, with the title "GVE SD-WAN programmability Training"
+
+![flow](images/dCloud-session.png)
+
+**Step--2**
+Click on "View" and then scroll to the top of the topology till you find "wkst1" which is the Windows workstation/jump server. Click on "Remote Desktop" to open
+
+![flow](images/Launch-Workstation.jpg)
+
+**Step-3**
+
+Once you are on windows machine, launch the Google Chrome browser. 
+
+Open the box link `https://cisco.box.com/s/stnzfzldc37rit4dpd367b9iv79gptg0` in google chrome browser and click on download. 
+
+![download](images/download.png) 
+
+Go to Downloads directory on file explorer and right click on the zip and select `extract all` as seen below 
+
+![extract-1](images/Extract-files.png)
+
+Provide `C:\Users\Administrator\Desktop` as path and select Extract option. 
+
+![extract-2](images/extract-2.png) 
+
+Now please go to `sdwan_prog_lab` directory on Desktop and follow below installation instructions. 
+
+Option 2:
+If you have used option 1, ignore this section and jump to next
 
 ![flow](images/Accessing_Lab.png)
 
