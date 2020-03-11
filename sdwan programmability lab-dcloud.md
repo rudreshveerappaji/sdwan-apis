@@ -204,7 +204,9 @@ Provide `C:\Users\Administrator\Desktop` as path and select Extract option.
 
 ![extract-2](images/extract-2.png) 
 
-Now please go to `sdwan-programmability-lab` directory on Desktop and follow below installation instructions. 
+Now please go to `sdwan-programmability-lab` directory on Desktop as shown below and follow next installation instructions. 
+
+![desktop-2](images/desktop-folder.png) 
 
 </details>
 <br>
