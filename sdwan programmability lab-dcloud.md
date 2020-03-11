@@ -144,7 +144,7 @@ Provide `C:\Users\Administrator\Desktop` as path and select Extract option.
 
 ![extract-2](images/extract-2.png) 
 
-Now please go to `sdwan_prog_lab` directory on Desktop and follow below installation instructions. 
+Now please go to `sdwan-programmability-lab` directory on Desktop and follow below installation instructions. 
 
 Option 2:
 If you have used option 1, ignore this section and jump to next
@@ -202,7 +202,7 @@ Provide `C:\Users\Administrator\Desktop` as path and select Extract option.
 
 ![extract-2](images/extract-2.png) 
 
-Now please go to `sdwan_prog_lab` directory on Desktop and follow below installation instructions. 
+Now please go to `sdwan-programmability-lab` directory on Desktop and follow below installation instructions. 
 
 # Installation Instructions:
 
@@ -216,7 +216,8 @@ Click on **python-3.7.3-amd64.exe** file and please enable **Add Python 3.7 to P
 
 **Step-2**
 
-Once python installation is complete, please open windows command prompt and run `cd C:\Users\Administrator\Desktop\sdwan_prog_lab`
+Once python installation is complete, please open windows command prompt and run 
+`cd C:\Users\Administrator\Desktop\sdwan-programmability-lab`
 
 **Step-3**
 
@@ -237,7 +238,7 @@ set password=admin
 Verify that your variables are correctly set using the following command on cmd. This will show many variables including the 4 we just added, look for these specifically.
 
 ```
-C:Users\Administrator\Desktop\sdwan-programmability=lab> set
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set
 
 password=admin
 USERNAME=admin
