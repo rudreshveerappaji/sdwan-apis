@@ -230,16 +230,15 @@ Run below commands using the vmanage ip address, port, login credentials from dc
 These commands should be run in command prompt to set the environment variables which stores vmanage details. 
 
 ```
-set vmanage_host=192.18.1.10
-set vmanage_port=443
-set username=admin
-set password=admin
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_host=192.18.1.10
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_port=443
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set username=admin
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set password=admin
 ```
 Verify that your variables are correctly set using the following command on cmd. This will show many variables including the 4 we just added, look for these specifically.
 
 ```
 C:Users\Administrator\Desktop\sdwan-programmability-lab> set
-
 password=admin
 USERNAME=admin
 vmanage_host=192.18.1.10
