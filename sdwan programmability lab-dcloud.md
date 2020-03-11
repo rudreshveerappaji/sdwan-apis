@@ -1204,15 +1204,27 @@ Here, we are using InfluxDB as a datasource for Grafana to plot the information 
 **Step-1:**
 
 <pre>
-On windows command prompt execute the command <b>cd C:\Users\Administrator\Desktop\sdwan_prog_lab\influxdb-1.7.4-1</b> to change directory.
 
-Now run the command <b>.\influx.exe</b> to connect to influx DB CLI and create database to store firewall<br>inspect count values
+***Create a new windows command prompt and execute the following steps for influxdb, keep the first one in the background which we will use for running python scripts ***
+
+On the new windows command prompt execute the command <b>cd C:\Users\Administrator\Desktop\sdwan_prog_lab\influxdb-1.7.4-1</b> to change directory.
+
+```
+C:\Users\Administrator> cd Desktop
+C:\Users\Administrator\Desktop>cd sdwan-programmability-lab
+C:\Users\Administrator\Desktop\sdwan-programmability-lab> cd influx-1.7.10_windows_amd64
+C:\Users\Administrator\Desktop\sdwan-programmability-lab\influx-1.7.10_windows_amd64> cd influxdb-1.7.10-1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab\influx-1.7.10_windows_amd64> cd influxdb-1.7.10-1>.\influx.exe
+
+```
+
+Next run the command <b>.\influx.exe</b> to connect to influx DB CLI as shown above and create database to store firewall<br>inspect count values
 </pre> 
 
 **Sample Response**
 
 ```
-# .\influx.exe
+C:\Users\Administrator\Desktop\sdwan-programmability-lab\influx-1.7.10_windows_amd64>.\influx.exe
 Connected to http://localhost:8086 version 1.7.4
 InfluxDB shell version: 1.7.4
 Enter an InfluxQL query
