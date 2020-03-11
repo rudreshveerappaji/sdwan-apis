@@ -12,7 +12,7 @@ To use this application you will need:
 Clone the code to local machine.
 
 ```
-git clone https://github.com/suchandanreddy/sdwan-apis.git
+git clone https://github.com/rudreshveerappaji/sdwan-apis.git
 cd sdwan-apis/code_samples
 ```
 
