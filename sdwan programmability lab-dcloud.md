@@ -154,13 +154,9 @@ If you have used option 1, ignore this section and jump to next
 **Step-1**
 
 Connect to your dCloud session by opening your Cisco AnyConnect client and
-providing the following information to connect into the lab session:
+providing the Anyconnect host, username and password information to connect into the lab session:
 
-| Parameter | Input |
-| ------ | ------ |
-| AnyConnect Host | **Instructor Provided** |
-| Username | **Instructor Provided** |
-| Password| **Instructor Provided** |
+![anyconnect-2](images/Anyconnect-session-details.png) 
 
 **Step-2**
 
