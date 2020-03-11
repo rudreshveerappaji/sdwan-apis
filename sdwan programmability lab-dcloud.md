@@ -150,7 +150,7 @@ Now please go to `sdwan-programmability-lab` directory on Desktop and follow bel
 
 ### Lab access Option 2
 
-Use this option if you had any issues using Option 1 above, else skip this section and move to next
+Use this option only if you had any issues using Option 1 above, else skip this section and move to next
 
 <details>
   <summary>Click to expand!</summary>
