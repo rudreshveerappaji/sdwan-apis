@@ -105,10 +105,10 @@ Table of Contents
 
 | Component | Software Version |
 | ------ | ------ |
-| vManage  | 18.4.0 |
-| cEdge (CSR1000v) | 16.10.1 |
-| vEdge (vedge-cloud) | 18.4.0 |
-| InfluxDB  | 1.7.4 |
+| vManage  | 19.2.0 |
+| cEdge (CSR1000v) | 16.12.1 |
+| vEdge (vedge-cloud) | 19.2.0 |
+| InfluxDB  | 1.7.10 |
 | Grafana   | 6.0.2 |
 
 ##	 Accessing the lab
@@ -230,7 +230,7 @@ Run below commands using the vmanage ip address, port, login credentials from dc
 These commands should be run in command prompt to set the environment variables which stores vmanage details. 
 
 ```
-C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_host=192.18.1.10
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_host=198.18.1.10
 C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_port=443
 C:Users\Administrator\Desktop\sdwan-programmability-lab> set username=admin
 C:Users\Administrator\Desktop\sdwan-programmability-lab> set password=admin
@@ -241,7 +241,7 @@ Verify that your variables are correctly set using the following command on cmd.
 C:Users\Administrator\Desktop\sdwan-programmability-lab> set
 password=admin
 USERNAME=admin
-vmanage_host=192.18.1.10
+vmanage_host=198.18.1.10
 vmanage_port=443
 
 
@@ -423,7 +423,17 @@ Note:  All REST API calls to vmanage contains the root "/dataservice".
 **Step-1:**
 
 <pre>
-Open Windows Command prompt and execute the command <b>py -3.7 vmanage_apis.py</b> to see the list of<br>available options in this CLI based python application script. 
+Use the same Command prompt, execute the command <b>py -3.7 vmanage_apis.py</b> to see the list of<br>available options in this CLI based python application script. 
+
+```
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py
+```
+
+Note: If not in the correct folder, change it using below so that you are in the correct directory
+
+```
+C:\Users\Administrator> cd C:\Users\Administrator\Desktop\sdwan-programmability-lab
+```
 </pre>
 
 **Sample Response**
