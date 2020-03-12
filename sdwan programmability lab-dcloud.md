@@ -213,7 +213,9 @@ Minimize the command window pop-up and let influxd run in background.
 
 **Step-1**
 
-Go to directory `sdwan_prog_lab\grafana-6.0.2\bin` and **click on** the <b>grafana-server.exe</b> file to run.
+Make sure to right-click and extract the "grafana-6.0.2.windows-amd64 folder .zip"
+
+Go to directory `sdwan_programmability_lab\grafana-6.0.2\bin` and **click on** the <b>grafana-server.exe</b> file to run.
 
 Minimize the command window pop-up and let grafana server run in background. 
 
