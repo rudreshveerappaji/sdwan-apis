@@ -259,7 +259,7 @@ vmanage_port=443
 
 **Step-1**
 
-Go to directory `sdwan-programmability-lab\influxdb-1.7.10`, extract the files in the same folder as shown and then **click on** the <b>influxd.exe</b> file to run.
+Go to directory `sdwan-programmability-lab\`, extract the files in the same folder as shown. Then a new folder will be created with the same name, go inside that and then **click on** the <b>influxd.exe</b> file to run.
 
 ![extract-5](images/influx-extract.png)
 
@@ -269,7 +269,7 @@ Minimize the command window pop-up and let influxd run in background. Do not clo
 
 **Step-1**
 
-Go to directory `sdwan-programmability-lab\grafana-6.0.2\bin`, extract the files in the same folder as shown and **click on** the <b>grafana-server.exe</b> file to run.
+Go to directory `sdwan-programmability-lab\`, extract the files in the same folder as shown. Then a new folder will be created with the same name, go inside that and then **click on** the <b>grafana-server.exe</b> file to run.
 
 ![extract-1](images/grafana-extract.png)
 
