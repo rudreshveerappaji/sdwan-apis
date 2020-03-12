@@ -132,7 +132,7 @@ Click on "View" and then scroll to the top of the topology till you find "wkst1"
 
 Once you are on windows machine, launch the Google Chrome browser. 
 
-Open the box link `https://cisco.box.com/s/stnzfzldc37rit4dpd367b9iv79gptg0` in google chrome browser and click on download. 
+Open the box link `https://tinyurl.com/romvn3s` in google chrome browser inside the windows machine (Very Important) and click on download. 
 
 ![download](images/download.png) 
 
@@ -194,7 +194,7 @@ This will place you onto “WKST1,” which is the launching point for all lab t
 
 Once you are on windows machine, launch the Google Chrome browser. 
 
-Open the box link `https://cisco.box.com/s/stnzfzldc37rit4dpd367b9iv79gptg0` in google chrome browser and click on download. 
+Open the box link `https://tinyurl.com/romvn3s` in google chrome browser and click on download. 
 
 ![download](images/download.png) 
 
