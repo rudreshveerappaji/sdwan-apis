@@ -261,7 +261,7 @@ vmanage_port=443
 
 Go to directory `sdwan-programmability-lab\`, extract the files in the same folder as shown. Then a new folder will be created with the same name, go inside that and then **click on** the <b>influxd.exe</b> file to run.
 
-![extract-5](images/influx-extract.png)
+![extract-5](images/Influx-extract.png)
 
 Minimize the command window pop-up and let influxd run in background. Do not close it.
 
