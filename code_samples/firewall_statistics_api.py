@@ -50,7 +50,8 @@ class rest_api_lib:
         #Url for posting login data
         login_url = base_url + login_action
         url = base_url + login_url
-
+		#URL for retrieving client token
+        token_url = base_url + 'dataservice/client/token'
         sess = requests.session()
 
         #If the vmanage has a certificate signed by a trusted authority change verify to True
@@ -61,8 +62,18 @@ class rest_api_lib:
         if b'<html>' in login_response.content:
             print ("Login Failed")
             sys.exit(0)
-
+        
+        login_token=sess.get(url=token_url,verify=False)
+		
+        if b'<html>' in login_token.content:
+            print("Login token Failed")
+            sys.exit(0)
+		
+		#Update token to session headers
+        sess.headers['X-XSRF-TOKEN']=login_token.content
         self.session[vmanage_host] = sess
+
+
 
     def get_request(self, mount_point):
         """GET request"""
@@ -76,12 +87,12 @@ class rest_api_lib:
     def post_request(self, mount_point, payload, headers={'Content-type': 'application/json', 'Accept': 'application/json'}):
         """POST request"""
         url = "https://%s:%s/dataservice/%s"%(self.vmanage_host, self.vmanage_port, mount_point)
-        #print(url)
+        print(url)
         payload = json.dumps(payload)
-        #print (payload)
+        print (payload)
 
         response = self.session[self.vmanage_host].post(url=url, data=payload, headers=headers, verify=False)
-        #print(response.text)
+        print(response.text)
         #exit()
         #data = response
         return response
