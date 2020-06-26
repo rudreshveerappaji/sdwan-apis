@@ -1,6 +1,6 @@
 
-SD-WAN Programmability Lab Guide 
-================================
+GVE EN SD-WAN Programmability Lab Guide (vManage 19.2)
+======================================================
 
 
 Table of Contents
@@ -15,7 +15,7 @@ Table of Contents
    * [Installation Instructions:](#installation-instructions)
       * [Python Installation](#python-installation)
       * [Influx DB Installation](#influx-db-installation)
-      * [Grafana Installation](#grafana-installation)
+      * [Grafana Installation](#grafana-installation) - Optional
    * [Lab Flow/Use cases](#lab-flowuse-cases)
    * [Usecase-1: Device and Monitoring API's](#usecase-1-device-and-monitoring-apis)
       * [Code Components](#code-components)
@@ -105,28 +105,66 @@ Table of Contents
 
 | Component | Software Version |
 | ------ | ------ |
-| vManage  | 18.4.0 |
-| cEdge (CSR1000v) | 16.10.1 |
-| vEdge (vedge-cloud) | 18.4.0 |
-| InfluxDB  | 1.7.4 |
+| vManage  | 19.2.0 |
+| cEdge (CSR1000v) | 16.12.1 |
+| vEdge (vedge-cloud) | 19.2.0 |
+| InfluxDB  | 1.7.10 |
 | Grafana   | 6.0.2 |
 
 ##	 Accessing the lab
 
-**Note:** This lab utilizes the dCloud SD-WAN platform so, please schedule dcloud lab ahead of time before proceeding with below steps.
+**Note:** This lab utilizes the dCloud SD-WAN platform so, if you have RSVP'ed to do the lab you will have a mail with the session details. Choose either option 1 or 2 to access the session.
+
+### Lab access Option 1
+
+**Step-1**
+
+Open the dCloud session shared with you in your email, with the title "GVE SD-WAN programmability Training"
+
+![flow](images/dCloud-session.png)
+
+**Step--2**
+Click on "View" and then scroll to the top of the topology till you find "wkst1" which is the Windows workstation/jump server. Click on "Remote Desktop" to open
+
+![flow](images/Launch-Workstation.jpg)
+
+**Step-3**
+
+Once you are on windows machine, launch the Google Chrome browser. 
+
+Open the box link `https://tinyurl.com/romvn3s` in google chrome browser inside the windows machine (Very Important) and click on download. 
+
+![download](images/download.png) 
+
+Go to Downloads directory on file explorer and right click on the zip and select `extract all` as seen below 
+
+![extract-1](images/Extract-files.png)
+
+Provide `C:\Users\Administrator\Desktop` as path and select Extract option. 
+
+![extract-2](images/extract-2.png) 
+
+Now please go to `sdwan-programmability-lab` directory on Desktop and follow below installation instructions.
+
+![desktop-2](images/desktop-folder.png) 
+
+### Lab access Option 2
+
+Use this option only if you had any issues using Option 1 above, else skip this section and move to next
+
+<details>
+  <summary>Click to expand!</summary>
+	
+If you have used option 1, ignore this section and jump to next
 
 ![flow](images/Accessing_Lab.png)
 
 **Step-1**
 
 Connect to your dCloud session by opening your Cisco AnyConnect client and
-providing the following information to connect into the lab session:
+providing the Anyconnect host, username and password information to connect into the lab session:
 
-| Parameter | Input |
-| ------ | ------ |
-| AnyConnect Host | **Instructor Provided** |
-| Username | **Instructor Provided** |
-| Password| **Instructor Provided** |
+![anyconnect-2](images/Anyconnect-session-details.png) 
 
 **Step-2**
 
@@ -156,7 +194,7 @@ This will place you onto “WKST1,” which is the launching point for all lab t
 
 Once you are on windows machine, launch the Google Chrome browser. 
 
-Open the box link `https://cisco.box.com/s/stnzfzldc37rit4dpd367b9iv79gptg0` in google chrome browser and click on download. 
+Open the box link `https://tinyurl.com/romvn3s` in google chrome browser and click on download. 
 
 ![download](images/download.png) 
 
@@ -168,7 +206,10 @@ Provide `C:\Users\Administrator\Desktop` as path and select Extract option.
 
 ![extract-2](images/extract-2.png) 
 
-Now please go to `sdwan_prog_lab` directory on Desktop and follow below installation instructions. 
+Now please go to `sdwan-programmability-lab` directory on Desktop as shown below and follow next installation instructions. 
+
+</details>
+<br>
 
 # Installation Instructions:
 
@@ -180,9 +221,11 @@ Click on **python-3.7.3-amd64.exe** file and please enable **Add Python 3.7 to P
 
 ![python_1](images/python_installation_1.png)
 
+
 **Step-2**
 
-Once python installation is complete, please open windows command prompt and run `cd C:\Users\Administrator\Desktop\sdwan_prog_lab`
+Once python installation is complete, please open windows command prompt and run 
+`cd C:\Users\Administrator\Desktop\sdwan-programmability-lab`
 
 **Step-3**
 
@@ -195,27 +238,42 @@ Run below commands using the vmanage ip address, port, login credentials from dc
 These commands should be run in command prompt to set the environment variables which stores vmanage details. 
 
 ```
-set vmanage_host=<vmanage-ip>
-set vmanage_port=<vmanage-port>
-set username=<username>
-set password=<password>
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_host=198.18.1.10
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set vmanage_port=443
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set username=admin
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set password=admin
+```
+Verify that your variables are correctly set using the following command on cmd. This will show many variables including the 4 we just added, look for these specifically.
+
+```
+C:Users\Administrator\Desktop\sdwan-programmability-lab> set
+password=admin
+USERNAME=admin
+vmanage_host=198.18.1.10
+vmanage_port=443
+
+
 ```
 
 ## Influx DB Installation
 
 **Step-1**
 
-Go to directory `sdwan_prog_lab\influxdb-1.7.4-1` and **click on** the <b>influxd.exe</b> file to run.
+Go to directory `sdwan-programmability-lab\`, extract the files in the same folder as shown. Then a new folder will be created with the same name, go inside that and then **click on** the <b>influxd.exe</b> file to run.
 
-Minimize the command window pop-up and let influxd run in background. 
+![extract-5](images/Influx-extract.png)
+
+Minimize the command window pop-up and let influxd run in background. Do not close it.
 
 ## Grafana Installation
 
 **Step-1**
 
-Go to directory `sdwan_prog_lab\grafana-6.0.2\bin` and **click on** the <b>grafana-server.exe</b> file to run.
+Go to directory `sdwan-programmability-lab\`, extract the files in the same folder as shown. Then a new folder will be created with the same name, go inside that and then **click on** the <b>grafana-server.exe</b> file to run.
 
-Minimize the command window pop-up and let grafana server run in background. 
+![extract-1](images/grafana-extract.png)
+
+Minimize the command window pop-up and let grafana server run in background. Do not close it.
 
 
 
@@ -247,7 +305,7 @@ Now let's start with 1st use case and learn how to use Device and Monitoring API
 
 How to retrieve devices list, control connection status, interface status, system status using vManage REST API's.
 
-## Code Components
+## [FYI] Code Components
 
 Please note that this is a FYI section which includes code snippets and structure of CLI based python application script **vmanage_apis.py**. 
 
@@ -373,13 +431,23 @@ Note:  All REST API calls to vmanage contains the root "/dataservice".
 **Step-1:**
 
 <pre>
-Open Windows Command prompt and execute the command <b>py -3.7 vmanage_apis.py</b> to see the list of<br>available options in this CLI based python application script. 
+Use the same Command prompt, execute the command <b>py -3.7 vmanage_apis.py</b> to see the list of<br>available options in this CLI based python application script. 
+
+```
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py
+```
+
+Note: If not in the correct folder, change it using below so that you are in the correct directory
+
+```
+C:\Users\Administrator> cd C:\Users\Administrator\Desktop\sdwan-programmability-lab
+```
 </pre>
 
 **Sample Response**
 
 ```
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py
 Usage: vmanage_apis.py [OPTIONS] COMMAND [ARGS]...
 
   Command line tool for deploying templates to CISCO SDWAN.
@@ -418,7 +486,7 @@ See the below sample response which includes all the information retrieved for o
 **Sample Response**  
   
 ```
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py list-devices
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py list-devices
 Retrieving the device list
 https://vmanage-ip:port/dataservice/device
 
@@ -528,7 +596,7 @@ Options:
 #cedge 
   
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py control-status --system_ip 10.3.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py control-status --system_ip 10.3.0.1
 Retrieving the Control Status
 https://vmanage-ip:port/dataservice/device/control/synced/connections?deviceId=10.3.0.1
 
@@ -549,7 +617,7 @@ Control Connection status for Device =  10.3.0.1
 
 #vedge
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py control-status --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py control-status --system_ip 10.2.0.1
 Retrieving the Control Status
 https://vmanage-ip:port/dataservice/device/control/synced/connections?deviceId=10.2.0.1
 
@@ -584,7 +652,7 @@ In `interface-status` option, we use resource URI `device/interface/synced?devic
 #cedge
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.3.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.3.0.1
 Retrieving the interface Status
 https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.3.0.1
 
@@ -630,11 +698,11 @@ C:\Users\Administrator\Desktop\sdwan_prog_lab>
 #vedge 
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py interface-status --system_ip 10.1.0.1
 Retrieving the interface Status
-https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.2.0.1
+https://vmanage-ip:port/dataservice/device/interface/synced?deviceId=10.1.0.1
 
-Interfaces status for Device =  10.2.0.1
+Interfaces status for Device =  10.1.0.1
 ╒══════════════════╤══════════════════════╕
 │ Interface Name   │ Operational status   │
 ╞══════════════════╪══════════════════════╡
@@ -675,7 +743,7 @@ In `device-counters` option, we use resource URI `device/counters?deviceId=<syst
 ```
 #cedge
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.3.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.3.0.1
 Retrieving the Device Counters
 https://vmanage-ip:port/dataservice/device/counters?deviceId=10.3.0.1
 
@@ -689,9 +757,9 @@ Device Counters for Device =  10.3.0.1
 #vedge
 
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py device-counters --system_ip 10.1.0.1
 Retrieving the Device Counters
-https://vmanage-ip:port/dataservice/device/counters?deviceId=10.2.0.1
+https://vmanage-ip:port/dataservice/device/counters?deviceId=10.1.0.1
 
 Device Counters for Device =  10.2.0.1
 ╒════════════════╤══════════════════╤══════════════════════╤═══════════════════╤═════════════════════╕
@@ -732,9 +800,9 @@ C:\Users\Administrator\Desktop\sdwan_prog_lab>
 
 #vedge
 
-C:\Users\Administrator\Desktop\sdwan_prog_lab>py -3.7 vmanage_apis.py system-status --system_ip 10.2.0.1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>py -3.7 vmanage_apis.py system-status --system_ip 10.1.0.1
 Retrieving the System Status
-https://vmanage-ip:port/dataservice/device/system/status?deviceId=10.2.0.1
+https://vmanage-ip:port/dataservice/device/system/status?deviceId=10.1.0.1
 
 System status for Device =  10.2.0.1
 ╒═════════════╤═════════════════════════════╤═══════════╤═══════════════╤══════════════╕
@@ -816,7 +884,7 @@ Now let’s start using the python script to create the template by using below 
 We can use `.yaml` file to store all the required variables for configuring the template. For example, please see below file `banner_config.yaml`
 
 ```
-$ cat banner_config.yaml
+C:\Users\Administrator\Desktop\sdwan-programmability-lab>type banner_config.yaml
 template_name: 'vedge_cloud_banner'
 template_description: 'vedge_cloud_banner'
 login_banner: 'test_yaml_banner_login'
@@ -826,7 +894,7 @@ device_type: 'vedge-cloud'
 
 While building the templates, we can load the content from above `.yaml` file 
 
-### Code Components
+### [FYI]Code Components
 
 Please note that this is a FYI section which includes code snippets and structure of command `create-feature-template` in CLI based python application script **vmanage_apis.py**. 
 
@@ -906,7 +974,7 @@ On windows command prompt, run command <b>py -3.7 vmanage_apis.py create-feature
 **Sample Response**
 
 ```
-$ py -3.7 vmanage_apis.py create-feature-template --input_yaml banner_config.yaml
+C:\Users\Administrator\Desktop\sdwan-programmability-lab> py -3.7 vmanage_apis.py create-feature-template --input_yaml banner_config.yaml
 Creating feature template based on yaml file details
 Loading Network Configuration Details from YAML File
 
@@ -1144,15 +1212,27 @@ Here, we are using InfluxDB as a datasource for Grafana to plot the information 
 **Step-1:**
 
 <pre>
-On windows command prompt execute the command <b>cd C:\Users\Administrator\Desktop\sdwan_prog_lab\influxdb-1.7.4-1</b> to change directory.
 
-Now run the command <b>.\influx.exe</b> to connect to influx DB CLI and create database to store firewall<br>inspect count values
+***Create a new windows command prompt and execute the following steps for influxdb, keep the first one in the background which we will use for running python scripts ***
+
+On the new windows command prompt execute the command <b>cd C:\Users\Administrator\Desktop\sdwan_prog_lab\influxdb-1.7.4-1</b> to change directory.
+
+```
+C:\Users\Administrator> cd Desktop
+C:\Users\Administrator\Desktop>cd sdwan-programmability-lab
+C:\Users\Administrator\Desktop\sdwan-programmability-lab> cd influx-1.7.10_windows_amd64
+C:\Users\Administrator\Desktop\sdwan-programmability-lab\influx-1.7.10_windows_amd64> cd influxdb-1.7.10-1
+C:\Users\Administrator\Desktop\sdwan-programmability-lab\influx-1.7.10_windows_amd64> cd influxdb-1.7.10-1>.\influx.exe
+
+```
+
+Next run the command <b>.\influx.exe</b> to connect to influx DB CLI as shown above and create database to store firewall<br>inspect count values
 </pre> 
 
 **Sample Response**
 
 ```
-# .\influx.exe
+C:\Users\Administrator\Desktop\sdwan-programmability-lab\influx-1.7.10_windows_amd64>.\influx.exe
 Connected to http://localhost:8086 version 1.7.4
 InfluxDB shell version: 1.7.4
 Enter an InfluxQL query
@@ -1306,7 +1386,7 @@ Note: Below screenshots are for Grafana version 6.0.2
 
 **Step-1:**
 
-Use web browser and login to Grafana at http://localhost:3000/  (Username/Password:admin/admin) . After login, we will see below home screen.
+Use web browser and login to Grafana at http://localhost:3000/  (Username/Password:admin/admin) . After login, we will see below home screen. After first login, it will prompt to change the password - please use cisco123 as the new password
 
 ![homescreen](images/Grafana_homescreen.png)
 
@@ -1334,6 +1414,8 @@ Select Save and Test option and check if Data source is working.
 **Step-5:** 
 
 Now let's create Dashboard by selecting New dashboard option
+
+![Dashboard1](images/Grafana-dashbboard.png)
 
 ![Dashboard](images/grafana_new_1.png)
 
