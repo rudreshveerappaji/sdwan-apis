@@ -34,3 +34,4 @@ export vmanage_port=<vmanage-port>
 export username=<username>
 export password=<password>
 ```
+Note: type "export" on terminal to see the existing settings (MAC or Linux)
